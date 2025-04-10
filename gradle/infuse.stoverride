@@ -13,7 +13,15 @@ http:
       type: response
       require-body: true
       timeout: 1
+    - match: ^https:\/\/api\.trakt\.tv\/users\/settings
+      name: InfuseTraktPro1
+      type: response
+      require-body: true
+      timeout: 1
 script-providers:
   InfuseTraktPro:
     url: https://raw.githubusercontent.com/NKR00711/Virtual-Hosts/refs/heads/master/gradle/wrapper/trakt_infuse.js
+    interval: 86400
+  InfuseTraktPro1:
+    url: https://raw.githubusercontent.com/NKR00711/Virtual-Hosts/refs/heads/master/gradle/wrapper/trakt_infuse_FreeIDMZone.js
     interval: 86400
