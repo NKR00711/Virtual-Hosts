@@ -12,7 +12,7 @@ http:
       name: InfuseTraktPro
       type: response
       require-body: true
-      timeout: 10
+      timeout: 0
 script-providers:
   InfuseTraktPro:
     url: https://raw.githubusercontent.com/NKR00711/Virtual-Hosts/refs/heads/master/gradle/wrapper/trakt_infuse.js
