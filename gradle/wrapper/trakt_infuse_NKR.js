@@ -10,7 +10,7 @@ Usage statement: ⚠️For reference only, 🈲Reprint and sale!
 **************************************
 
 [rewrite_local]
-^https:\/\/api\.trakt\.tv\/storage url script-response-body https://raw.githubusercontent.com/NKR00711/Virtual-Hosts/refs/heads/master/gradle/wrapper/trakt_infuse.js
+^https:\/\/api\.trakt\.tv\/storage url script-response-body https://raw.githubusercontent.com/NKR00711/Virtual-Hosts/refs/heads/master/gradle/wrapper/trakt_infuse_NKR.js
 
 [mitm]
 hostname = api.trakt.tv
