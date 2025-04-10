@@ -3,7 +3,7 @@
 #!author=nkr00711
 #!icon=https://raw.githubusercontent.com/LegoIsFunny/InfusePlus/refs/heads/main/Resources/icon.png
 name: Infuse
-desc: Unlock Infuse Pro Using Trakt
+desc: Unlock Infuse Pro Using Trakt Login
 http:
   mitm:
     - "api.trakt.tv"
