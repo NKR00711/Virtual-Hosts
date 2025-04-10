@@ -1,0 +1,19 @@
+#!desc=Infuse Trakt Pro
+#!homepage=https://firecore.com/infuse
+#!author=nkr00711
+#!icon=https://raw.githubusercontent.com/LegoIsFunny/InfusePlus/refs/heads/main/Resources/icon.png
+name: Infuse
+desc: Unlock Infuse Pro Using Trakt
+http:
+  mitm:
+    - "api.trakt.tv"
+  script:
+    - match: ^https:\/\/api\.trakt\.tv\/storage
+      name: InfuseTraktPro
+      type: response
+      require-body: true
+      timeout: 10
+script-providers:
+  InfuseTraktPro:
+    url: https://raw.githubusercontent.com/NKR00711/Virtual-Hosts/refs/heads/master/gradle/wrapper/trakt_infuse.js
+    interval: 86400
