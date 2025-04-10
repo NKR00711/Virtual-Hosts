@@ -16,10 +16,18 @@ Usage statement: ⚠️For reference only, 🈲Reprint and sale!
 hostname = api.trakt.tv
 
 *************************************/
-var ddm = JSON.parse($response.body);
+var body = $response.body;
+var obj = JSON.parse(body);
 
-ddm=[{"key":"iapStatus_v2","value":"Ll/Dvdw/dCzWZev836yv+EYl+ayZXl8Rndw75KjLgpEqXwYAU6iwmR0XgB4lhhZDLzMIDHKjf5GrB/camzGfJk40o05Zod9M/08VW/SPucmMCbHf0PlezL+iwwbCJZY0xZwMoAw+fUougNUcb0TYGXXZc8+Lh7u5oVvlDvqLESe22mLi066CRFqOqwr0YtP+lp52SDqC7TxjSFdcKfO8Hw==","created_at":"3025-03-10T08:19:05.000Z","updated_at":"3025-03-10T14:19:52.000Z"}];
+obj = [{"key":"iapStatus_v2","value":"Ll/Dvdw/dCzWZev836yv+EYl+ayZXl8Rndw75KjLgpEqXwYAU6iwmR0XgB4lhhZDLzMIDHKjf5GrB/camzGfJk40o05Zod9M/08VW/SPucmMCbHf0PlezL+iwwbCJZY0xZwMoAw+fUougNUcb0TYGXXZc8+Lh7u5oVvlDvqLESe22mLi066CRFqOqwr0YtP+lp52SDqC7TxjSFdcKfO8Hw==","created_at":"3025-03-10T08:19:05.000Z","updated_at":"3025-03-10T14:19:52.000Z"}]
 
-$done({body : JSON.stringify(ddm)});
+body = JSON.stringify(obj);
+$done({ body: body });
+
+// var ddm = JSON.parse($response.body);
+
+// ddm=[{"key":"iapStatus_v2","value":"Ll/Dvdw/dCzWZev836yv+EYl+ayZXl8Rndw75KjLgpEqXwYAU6iwmR0XgB4lhhZDLzMIDHKjf5GrB/camzGfJk40o05Zod9M/08VW/SPucmMCbHf0PlezL+iwwbCJZY0xZwMoAw+fUougNUcb0TYGXXZc8+Lh7u5oVvlDvqLESe22mLi066CRFqOqwr0YtP+lp52SDqC7TxjSFdcKfO8Hw==","created_at":"3025-03-10T08:19:05.000Z","updated_at":"3025-03-10T14:19:52.000Z"}];
+
+// $done({body : JSON.stringify(ddm)});
 
 // $done({body : '[{"key":"iapStatus_v2","value":"Ll/Dvdw/dCzWZev836yv+EYl+ayZXl8Rndw75KjLgpEqXwYAU6iwmR0XgB4lhhZDLzMIDHKjf5GrB/camzGfJk40o05Zod9M/08VW/SPucmMCbHf0PlezL+iwwbCJZY0xZwMoAw+fUougNUcb0TYGXXZc8+Lh7u5oVvlDvqLESe22mLi066CRFqOqwr0YtP+lp52SDqC7TxjSFdcKfO8Hw==","created_at":"3025-03-10T08:19:05.000Z","updated_at":"3025-03-10T14:19:52.000Z"}]'});
