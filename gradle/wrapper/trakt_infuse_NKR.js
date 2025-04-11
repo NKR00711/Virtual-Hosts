@@ -16,13 +16,39 @@ Usage statement: ⚠️For reference only, 🈲Reprint and sale!
 hostname = api.trakt.tv
 
 *************************************/
-var body = $response.body;
-var obj = JSON.parse(body);
+// Assuming response.body is a JSON string
+var body = $response.body; // Get the response body
+var obj = JSON.parse(body); // Parse the JSON string into an object
 
-obj = [{"key":"iapStatus_v2","value":"G5T3ZMnyYuNjUE6ZzTro37R7JgUJqlFS95sh6aDhiUL3MSzot4kngLFStzdazrHE1Q4+CgAEM6gFMIi9iaW5m8dXCj7dY78dCJJuMMFGDJUtFqXDMiotkO4ox3U2P/aFVUz2qTUxFA7tReQNci9Habx0398/dok/AoqGTauuYlFUcIIrFtJfVAS6BlB8OxvYjrJ83bzf47/TiPvzaDR5wQ==","created_at":"3025-03-10T08:19:05.000Z","updated_at":"3025-03-10T14:19:52.000Z"}]
+// Define the object to add
+var newItem = {
+  "key": "iapStatus_v2",
+  "value": "G5T3ZMnyYuNjUE6ZzTro37R7JgUJqlFS95sh6aDhiUL3MSzot4kngLFStzdazrHE1Q4+CgAEM6gFMIi9iaW5m8dXCj7dY78dCJJuMMFGDJUtFqXDMiotkO4ox3U2P/aFVUz2qTUxFA7tReQNci9Habx0398/dok/AoqGTauuYlFUcIIrFtJfVAS6BlB8OxvYjrJ83bzf47/TiPvzaDR5wQ==",
+  "created_at": "3025-03-10T08:19:05.000Z",
+  "updated_at": "3025-03-10T14:19:52.000Z"
+};
 
-body = JSON.stringify(obj);
-$done({ body: body });
+// Check if the item already exists in the response body
+var exists = obj.some(item => item.key === newItem.key);
+
+if (!exists) {
+  // If it doesn't exist, add the new item
+  obj.push(newItem);
+}
+
+// Convert the modified object back to a JSON string
+var modifiedBody = JSON.stringify(obj);
+
+// Now you can use modifiedBody as the new response body
+$done(modifiedBody); // Assuming you're in a context where $done is available
+
+// var body = $response.body;
+// var obj = JSON.parse(body);
+
+// obj = [{"key":"iapStatus_v2","value":"G5T3ZMnyYuNjUE6ZzTro37R7JgUJqlFS95sh6aDhiUL3MSzot4kngLFStzdazrHE1Q4+CgAEM6gFMIi9iaW5m8dXCj7dY78dCJJuMMFGDJUtFqXDMiotkO4ox3U2P/aFVUz2qTUxFA7tReQNci9Habx0398/dok/AoqGTauuYlFUcIIrFtJfVAS6BlB8OxvYjrJ83bzf47/TiPvzaDR5wQ==","created_at":"3025-03-10T08:19:05.000Z","updated_at":"3025-03-10T14:19:52.000Z"}]
+
+// body = JSON.stringify(obj);
+// $done({ body: body });
 
 // var ddm = JSON.parse($response.body);
 
