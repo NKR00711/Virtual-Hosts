@@ -1,0 +1,17 @@
+#!name = Infuse Pro
+#!desc = Infuse Pro using Trakt
+#!openUrl = 
+#!author = NKR
+#!homepage = t.me/FreeIDMZoneC
+#!icon = https://raw.githubusercontent.com/LegoIsFunny/InfusePlus/refs/heads/main/Resources/icon.png
+#!date = 2025-04-11
+#!category = Unlock
+
+[Script]
+# AdGuard
+# hostname = api.trakt.tv
+InfusePro = type=http-response,pattern=^https:\/\/api\.trakt\.tv\/storage,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NKR00711/Virtual-Hosts/refs/heads/master/gradle/wrapper/trakt_infuse_NKR.js
+Infuse = type=http-response,pattern=^https:\/\/api\.trakt\.tv\/users\/settings,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NKR00711/Virtual-Hosts/refs/heads/master/gradle/wrapper/trakt_infuse_FreeIDMZone.js
+
+[MITM]
+hostname = %APPEND% api.trakt.tv
