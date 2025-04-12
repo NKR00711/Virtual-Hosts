@@ -16,6 +16,27 @@ Usage statement: ⚠️For reference only, 🈲Reprint and sale!
 hostname = api.trakt.tv
 
 *************************************/
+// Get the response body
+var body = $response.body;
+
+// Parse the JSON string into an object
+var obj = JSON.parse(body);
+
+// Modify the object as needed
+obj = {
+    "subscription": {
+        "status": "active", // Change subscription status to active
+        "expiry": "2099-12-31T23:59:59Z", // Set a far future expiry date
+        "plan": "premium" // Set the plan to premium
+    }
+};
+
+// Convert the modified object back to a JSON string
+body = JSON.stringify(obj);
+
+// Return the modified body
+$done({ body: body });
+
 var body = $response.body;
 var obj = JSON.parse(body);
 
