@@ -26,6 +26,10 @@ var newItem = {
     "updated_at": "3025-03-10T14:19:52.000Z"
 };
 
+if (!Array.isArray(obj)) {
+    obj = []; // Initialize as an empty array if obj is not an array
+}
+
 var index = obj.findIndex(item => item.key === newItem.key);
 
 if (index !== -1) {
