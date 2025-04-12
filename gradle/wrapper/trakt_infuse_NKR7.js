@@ -38,11 +38,8 @@ if (index !== -1) {
     obj.push(newItem);
 }
 
-// Convert the modified object back to a JSON string
-var modifiedBody = JSON.stringify(obj);
-
-// Now you can use modifiedBody as the new response body
-$done(modifiedBody); // Assuming you're in a context where $done is available
+body = JSON.stringify(obj);
+$done({ body: body });
 
 // var body = $response.body;
 // var obj = JSON.parse(body);
