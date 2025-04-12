@@ -20,20 +20,22 @@ hostname = api.trakt.tv
 var body = $response.body; // Get the response body
 var obj = JSON.parse(body); // Parse the JSON string into an object
 
-// Define the object to add
 var newItem = {
-  "key": "iapStatus_v2",
-  "value": "G5T3ZMnyYuNjUE6ZzTro37R7JgUJqlFS95sh6aDhiUL3MSzot4kngLFStzdazrHE1Q4+CgAEM6gFMIi9iaW5m8dXCj7dY78dCJJuMMFGDJUtFqXDMiotkO4ox3U2P/aFVUz2qTUxFA7tReQNci9Habx0398/dok/AoqGTauuYlFUcIIrFtJfVAS6BlB8OxvYjrJ83bzf47/TiPvzaDR5wQ==",
-  "created_at": "3025-03-10T08:19:05.000Z",
-  "updated_at": "3025-03-10T14:19:52.000Z"
+    "key": "iapStatus_v2",
+    "value": "kar5PfIUS7FpIoOBKZWmu91VxvWfFj4kYKWSBCupHEN921FanmL3RCvTNX86WwwX5AtjVfccYX8U1jrqGVx7FCxt331VHWsu2QUACy/S6Oswkb6C7S5NgVG+g4/zuJV7so256kmY0PwlXMF7tbkjx4UrX/SYlZDll7cofLfzg0CNZ92gDpA5ZPbpw3ccSoDWlD/hkpvC73hzmXR9BDTjN4C4PGc9dbyYIgVSFEil738=",
+    "created_at": "2025-03-10T08:19:05.000Z",
+    "updated_at": "3025-03-10T14:19:52.000Z"
 };
 
-// Check if the item already exists in the response body
-var exists = obj.some(item => item.key === newItem.key);
+// Check if the item already exists in the array
+var index = obj.findIndex(item => item.key === newItem.key);
 
-if (!exists) {
-  // If it doesn't exist, add the new item
-  obj.push(newItem);
+if (index !== -1) {
+    // If it exists, replace the old item with the new item
+    obj[index] = newItem;
+} else {
+    // If it doesn't exist, add the new item
+    obj.push(newItem);
 }
 
 // Convert the modified object back to a JSON string
