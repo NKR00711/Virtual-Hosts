@@ -8,10 +8,10 @@
 #!loon_version = 3.2.9(837)
 #!homepage = 
 #!icon = https://raw.githubusercontent.com/LegoIsFunny/InfusePlus/refs/heads/main/Resources/icon.png
-#!date = 2025-04-102 14:30
+#!date = 2025-04-12 15:05
 
 [Script]
-http-response ^https?:\/\/api\.trakt\.tv\/storage, script-path=https://raw.githubusercontent.com/NKR00711/Virtual-Hosts/refs/heads/master/gradle/wrapper/trakt_infuse_NKR.js, requires-body=true, tag=InfusePro
-http-response ^https?:\/\/api\.trakt\.tv\/users\/settings, script-path=https://raw.githubusercontent.com/NKR00711/Virtual-Hosts/refs/heads/master/gradle/wrapper/trakt_infuse_FreeIDMZone.js, requires-body=true, tag=InfuseTrakt
+http-response ^https?:\/\/api\.trakt\.tv\/storage requires-body=1, script-path=https://raw.githubusercontent.com/NKR00711/Virtual-Hosts/refs/heads/master/gradle/wrapper/trakt_infuse_NKR.js
+http-response ^https?:\/\/api\.trakt\.tv\/users\/settings requires-body=1, script-path=https://raw.githubusercontent.com/NKR00711/Virtual-Hosts/refs/heads/master/gradle/wrapper/trakt_infuse_FreeIDMZone.js
 [MITM] 
 hostname = api.trakt.tv
