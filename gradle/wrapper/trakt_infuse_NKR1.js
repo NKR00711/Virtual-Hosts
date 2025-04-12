@@ -26,13 +26,20 @@ var newItem = {
   "updated_at": "3025-03-10T14:19:52.000Z"
 };
 
-var index = obj.findIndex(item => item.key === newItem.key);
+var exists = body.some(item => item.key === newItem.key);
 
-if (index !== -1) {
-    obj[index] = newItem;
-} else {
-    obj.push(newItem);
+if (!exists) {
+    // If it doesn't exist, add the new item
+    body.push(newItem);
 }
+
+// var index = obj.findIndex(item => item.key === newItem.key);
+
+// if (index !== -1) {
+//     obj[index] = newItem;
+// } else {
+//     obj.push(newItem);
+// }
 
 var modifiedBody = JSON.stringify(obj);
 
