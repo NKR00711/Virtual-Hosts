@@ -28,22 +28,25 @@ var newItem = {
     "updated_at": "3025-03-10T14:19:52.000Z"
 };
 
-// Check if the item already exists in the array
+// Find the index of the existing item with the same key
 var index = obj.findIndex(item => item.key === newItem.key);
 
 if (index === -1) {
     // If it doesn't exist, add the new item
-    console.log("no status");
     obj.push(newItem);
+    $notify("Item Added", "New item added with key: " + newItem.key);
 } else {
-    console.log("found status at :",index);
     // If it exists, replace the old item with the new item
     obj[index] = newItem;
+    $notify("Item Replaced", "Existing item replaced with key: " + newItem.key);
 }
 
 // Convert the modified object back to a JSON string
 var modifiedBody = JSON.stringify(obj);
+
+// Log the modified body for debugging
 console.log("Modified Body:", modifiedBody);
+
 // Return the modified response body
 $done(modifiedBody);
 
