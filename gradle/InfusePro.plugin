@@ -13,6 +13,7 @@
 [Script]
 # >Infuse Pro
 http-response ^https:\/\/api\.trakt\.tv\/storage, script-path=https://raw.githubusercontent.com/NKR00711/Virtual-Hosts/refs/heads/master/gradle/wrapper/trakt_infuse_NKR.js, requires-body=true, tag=Infuse Pro
+# >Infuse Trakt
 http-response ^https:\/\/api\.trakt\.tv\/users\/settings, script-path=https://raw.githubusercontent.com/NKR00711/Virtual-Hosts/refs/heads/master/gradle/wrapper/trakt_infuse_FreeIDMZone.js, requires-body=true, tag=Infuse Trakt
 [MITM] 
 hostname = api.trakt.tv
