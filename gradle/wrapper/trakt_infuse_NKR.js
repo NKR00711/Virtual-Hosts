@@ -16,9 +16,8 @@ Usage statement: ⚠️For reference only, 🈲Reprint and sale!
 hostname = api.trakt.tv
 
 *************************************/
-// Assuming response.body is a JSON string
-var body = $response.body; // Get the response body
-var obj = JSON.parse(body); // Parse the JSON string into an object
+var body = $response.body;
+var obj = Object.values(JSON.parse(body)); // Parse the JSON string into an object
 
 var newItem = {
     "key": "iapStatus_v2",
@@ -27,14 +26,11 @@ var newItem = {
     "updated_at": "3025-03-10T14:19:52.000Z"
 };
 
-// Check if the item already exists in the array
-var index = Object.values(obj).findIndex(item => item.key === newItem.key);
+var index = obj.findIndex(item => item.key === newItem.key);
 
 if (index !== -1) {
-    // If it exists, replace the old item with the new item
     obj[index] = newItem;
 } else {
-    // If it doesn't exist, add the new item
     obj.push(newItem);
 }
 
