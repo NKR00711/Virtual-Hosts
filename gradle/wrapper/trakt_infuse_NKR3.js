@@ -16,31 +16,33 @@ Usage statement: ⚠️For reference only, 🈲Reprint and sale!
 hostname = api.trakt.tv
 
 *************************************/
-var body = $response.body;
-var obj = JSON.parse(body);
+// Assuming response.body is a JSON string
+var body = $response.body; // Get the response body
+var obj = JSON.parse(body); // Parse the JSON string into an object (array)
 
+// Define the new item to add or replace
 var newItem = {
-  "key": "iapStatus_v2",
-  "value": "kar5PfIUS7FpIoOBKZWmu91VxvWfFj4kYKWSBCupHEN921FanmL3RCvTNX86WwwX5AtjVfccYX8U1jrqGVx7FCxt331VHWsu2QUACy/S6Oswkb6C7S5NgVG+g4/zuJV7so256kmY0PwlXMF7tbkjx4UrX/SYlZDll7cofLfzg0CNZ92gDpA5ZPbpw3ccSoDWlD/hkpvC73hzmXR9BDTjN4C4PGc9dbyYIgVSFEil738=",
-  "created_at": "3025-03-10T08:19:05.000Z",
-  "updated_at": "3025-03-10T14:19:52.000Z"
+    "key": "iapStatus_v2",
+    "value": "kar5PfIUS7FpIoOBKZWmu91VxvWfFj4kYKWSBCupHEN921FanmL3RCvTNX86WwwX5AtjVfccYX8U1jrqGVx7FCxt331VHWsu2QUACy/S6Oswkb6C7S5NgVG+g4/zuJV7so256kmY0PwlXMF7tbkjx4UrX/SYlZDll7cofLfzg0CNZ92gDpA5ZPbpw3ccSoDWlD/hkpvC73hzmXR9BDTjN4C4PGc9dbyYIgVSFEil738=",
+    "created_at": "2025-03-10T08:19:05.000Z",
+    "updated_at": "3025-03-10T14:19:52.000Z"
 };
 
-var exists = body.some(item => item.key === newItem.key);
+// Check if the item already exists in the array
+var index = obj.findIndex(item => item.key === newItem.key);
 
-if (!exists) {
+if (index === -1) {
     // If it doesn't exist, add the new item
-    body.push(newItem);
+    obj.push(newItem);
 } else {
-  var index = obj.findIndex(item => item.key === newItem.key);
-  
-  if (index !== -1) {
-      obj[index] = newItem;
-  }
+    // If it exists, replace the old item with the new item
+    obj[index] = newItem;
 }
 
+// Convert the modified object back to a JSON string
 var modifiedBody = JSON.stringify(obj);
 
+// Return the modified response body
 $done(modifiedBody);
 
 // var body = $response.body;
