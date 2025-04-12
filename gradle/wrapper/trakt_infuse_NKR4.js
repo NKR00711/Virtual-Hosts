@@ -33,15 +33,17 @@ var index = obj.findIndex(item => item.key === newItem.key);
 
 if (index === -1) {
     // If it doesn't exist, add the new item
+    console.log("no status");
     obj.push(newItem);
 } else {
+    console.log("found status at :",index);
     // If it exists, replace the old item with the new item
     obj[index] = newItem;
 }
 
 // Convert the modified object back to a JSON string
 var modifiedBody = JSON.stringify(obj);
-
+console.log("Modified Body:", modifiedBody);
 // Return the modified response body
 $done(modifiedBody);
 
