@@ -28,7 +28,7 @@ var newItem = {
 };
 
 // Check if the item already exists in the array
-var index = obj.findIndex(item => item.key === newItem.key);
+var index = Object.values(obj).findIndex(item => item.key === newItem.key);
 
 if (index !== -1) {
     // If it exists, replace the old item with the new item
