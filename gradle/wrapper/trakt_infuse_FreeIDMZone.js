@@ -27,6 +27,7 @@ obj["user"]["vip_years"] = 99999;
 obj["user"]["username"] = "NKR🇮🇳";
 obj["user"]["vip"] = true;
 
+obj["limits"] = obj["limits"] || {};
 obj["limits"]["list"]["item_count"] = 9999999;
 obj["limits"]["watchlist"]["item_count"] = 9999999;
 obj["limits"]["favorites"]["item_count"] = 9999999;
