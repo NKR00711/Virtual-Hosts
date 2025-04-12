@@ -24,8 +24,8 @@ obj["vip"] = true;
 obj["user"] = obj["user"] || {}; // Ensure the user object exists
 obj["user"]["vip_og"] = true;
 obj["user"]["vip_years"] = 99999;
-obj["user"]["username"] = "NKR🇮🇳";
-obj["user"]["name"] = "NKR🇮🇳";
+obj["user"]["username"] = "NKR";
+obj["user"]["name"] = "NKR";
 obj["user"]["vip"] = true;
 
 obj["limits"] = obj["limits"] || {};
