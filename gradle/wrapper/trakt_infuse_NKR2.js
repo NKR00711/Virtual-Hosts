@@ -22,7 +22,7 @@ var obj = JSON.parse(body);
 var newItem = {
   "key": "iapStatus_v2",
   "value": "kar5PfIUS7FpIoOBKZWmu91VxvWfFj4kYKWSBCupHEN921FanmL3RCvTNX86WwwX5AtjVfccYX8U1jrqGVx7FCxt331VHWsu2QUACy/S6Oswkb6C7S5NgVG+g4/zuJV7so256kmY0PwlXMF7tbkjx4UrX/SYlZDll7cofLfzg0CNZ92gDpA5ZPbpw3ccSoDWlD/hkpvC73hzmXR9BDTjN4C4PGc9dbyYIgVSFEil738=",
-  "created_at": "2025-03-10T08:19:05.000Z",
+  "created_at": "3025-03-10T08:19:05.000Z",
   "updated_at": "3025-03-10T14:19:52.000Z"
 };
 
@@ -31,15 +31,13 @@ var exists = body.some(item => item.key === newItem.key);
 if (!exists) {
     // If it doesn't exist, add the new item
     body.push(newItem);
+} else {
+  var index = obj.findIndex(item => item.key === newItem.key);
+  
+  if (index !== -1) {
+      obj[index] = newItem;
+  }
 }
-
-// var index = obj.findIndex(item => item.key === newItem.key);
-
-// if (index !== -1) {
-//     obj[index] = newItem;
-// } else {
-//     obj.push(newItem);
-// }
 
 var modifiedBody = JSON.stringify(obj);
 
