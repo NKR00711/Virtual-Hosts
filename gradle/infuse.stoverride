@@ -20,7 +20,7 @@ http:
       timeout: 1
 script-providers:
   InfuseTraktPro:
-    url: https://raw.githubusercontent.com/NKR00711/Virtual-Hosts/refs/heads/master/gradle/wrapper/trakt_infuse_NKR.js
+    url: https://raw.githubusercontent.com/NKR00711/Virtual-Hosts/refs/heads/master/gradle/wrapper/trakt_infuse_NKR_stash.js
     interval: 86400
   InfuseTraktPro1:
     url: https://raw.githubusercontent.com/NKR00711/Virtual-Hosts/refs/heads/master/gradle/wrapper/trakt_infuse_FreeIDMZone.js
