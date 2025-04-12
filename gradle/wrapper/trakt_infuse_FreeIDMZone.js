@@ -24,12 +24,15 @@ obj["vip"] = true;
 obj["user"] = obj["user"] || {}; // Ensure the user object exists
 obj["user"]["vip_og"] = true;
 obj["user"]["vip_years"] = 99999;
-obj["user"]["ids"] = {
-    "uuid": "1f33e302422c8e6c04189b79e373dedbf25fe0a4",
-    "slug": "freeidmzone_user_1"
-};
-obj["user"]["username"] = "FreeIDMZone_User_1";
+obj["user"]["username"] = "NKR🇮🇳";
 obj["user"]["vip"] = true;
+
+obj["limits"]["list"]["item_count"] = 9999999;
+obj["limits"]["watchlist"]["item_count"] = 9999999;
+obj["limits"]["favorites"]["item_count"] = 9999999;
+obj["limits"]["collection"]["item_count"] = 9999999;
+obj["limits"]["notes"]["item_count"] = 9999999;
+obj["limits"]["recommendations"]["item_count"] = 9999999;
 
 body = JSON.stringify(obj);
 $done({ body: body });
