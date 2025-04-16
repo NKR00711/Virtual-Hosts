@@ -4,7 +4,7 @@ if($request.url.includes("v1/licenses/register")){
     "Data": {
     "sign": "12345678901234567890123456789012345678901234567890",
     "email": "NKR@Over.Lord",  // Replace with the actual email address
-    "deviceID": "1b1b5db57a96712d659770b16be56a93",
+    "deviceID": "",
     "licenseKey": "",
     "purchasedAt": "2025-04-14",
     "nextChargeAt": 9999,
@@ -20,15 +20,13 @@ if($request.url.includes("v1/licenses/register")){
   var obj = JSON.parse(body);
   obj["Data"]["DayBeforeExpiration"] = 9999;
   obj["Data"]["LicenseKey"] = "";
-	obj["Data"]["UpdatesAvailableUntilString"]= "3024-04-14";
-      obj["Data"]["updatesAvailableUntil"]= "3024-04-14";
   $response.body = JSON.stringify(obj);
 } else if($request.url.includes("v1/licenses/devices")){
   $response.status = 200;
   const newBody = JSON.stringify({
     "Message": "Ok",  // This field is commented out in the original code
     "Data": {
-        "DeviceID": "1b1b5db57a96712d659770b16be56a93",
+        "DeviceID": "",
         "UpdatesAvailableUntilString": "3024-04-14",
       "updatesAvailableUntil": "3024-04-14"
     },
