@@ -4,7 +4,7 @@ if($request.url.includes("v1/licenses/register")){
     "Data": {
     "sign": "12345678901234567890123456789012345678901234567890",
     "email": "NKR@Over.Lord",  // Replace with the actual email address
-    "deviceID": "",
+    "deviceID": "1b1b5db57a96712d659770b16be56a93",//Example
     "licenseKey": "",
     "purchasedAt": "2025-04-14",
     "nextChargeAt": 9999,
@@ -26,7 +26,7 @@ if($request.url.includes("v1/licenses/register")){
   const newBody = JSON.stringify({
     "Message": "Ok",  // This field is commented out in the original code
     "Data": {
-        "DeviceID": "",
+        "DeviceID": "1b1b5db57a96712d659770b16be56a93",//Example
         "UpdatesAvailableUntilString": "3024-04-14",
       "updatesAvailableUntil": "3024-04-14"
     },
