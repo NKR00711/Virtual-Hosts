@@ -1,4 +1,4 @@
-if($response.url.includes("v1/licenses/register")){
+if($request.url.includes("v1/licenses/register")){
   $response.status = 200;
   const newBody = JSON.stringify({
     "Data": {
@@ -14,14 +14,16 @@ if($response.url.includes("v1/licenses/register")){
   "Message": "Ok"
   });
   $response.body = newBody;
-} else if($response.url.includes("v1/apps/osx/tableplus")){
+} else if($request.url.includes("v1/apps/osx/tableplus")){
   $response.status = 200;
   var body = $response.body;
   var obj = JSON.parse(body);
   obj["Data"]["DayBeforeExpiration"] = 9999;
   obj["Data"]["LicenseKey"] = "";
+	obj["Data"]["UpdatesAvailableUntilString"]= "3024-04-14";
+      obj["Data"]["updatesAvailableUntil"]= "3024-04-14";
   $response.body = JSON.stringify(obj);
-} else if($response.url.includes("v1/licenses/devices")){
+} else if($request.url.includes("v1/licenses/devices")){
   $response.status = 200;
   const newBody = JSON.stringify({
     "Message": "Ok",  // This field is commented out in the original code
