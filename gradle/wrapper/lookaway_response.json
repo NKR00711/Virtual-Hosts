@@ -3,8 +3,7 @@ if($request.url.includes("v2/license/activate")){
   const newBody = JSON.stringify({
   "licenseKey": "NKR 🦁",  // Replace with the actual email address
   "updatesExpireAt": "9999-12-31T23:59:59Z",
-  "lifetime": true,
-  "error": null
+  "lifetime": true
   });
   $response.body = newBody;
 } else if($request.url.includes("v2/license/deactivate")){
@@ -19,7 +18,6 @@ if($request.url.includes("v2/license/activate")){
     "licenseKey": "NKR 🦁",  // Replace with the actual email address
     "updatesExpireAt": "9999-12-31T23:59:59Z",
     "lifetime": true,
-    "error": null
   });
   $response.body = newBody;
 }
