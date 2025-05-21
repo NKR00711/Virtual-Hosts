@@ -2,8 +2,6 @@ if($request.url.includes("v2/license/activate")){
   $response.status = 200;
   const newBody = JSON.stringify({
   "licenseKey": "NKR 🦁",  // Replace with the actual email address
-  "activationId": "1",
-  "licenseId":"LookAway",
   "updatesExpireAt": "9999-12-31T23:59:59Z",
   "lifetime": true
   });
@@ -18,8 +16,6 @@ if($request.url.includes("v2/license/activate")){
   $response.status = 200;
   const newBody = JSON.stringify({
     "licenseKey": "NKR 🦁",  // Replace with the actual email address
-    "activationId": "1",
-    "licenseId":"LookAway",
     "updatesExpireAt": "9999-12-31T23:59:59Z",
     "lifetime": true,
   });
