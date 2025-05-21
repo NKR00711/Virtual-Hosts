@@ -1,0 +1,36 @@
+if($request.url.includes("v2/license/activate")){
+  $response.status = 200;
+  const newBody = JSON.stringify({
+  "licenseKey": "NKR 🦁",  // Replace with the actual email address
+  "updatesExpireAt": "9999-12-31T23:59:59Z",
+  "lifetime": true,
+  "instanceId": {
+    "id": "47596ad9-a811-4ebf-ac8a-03fc7b6d2a17",
+    "name": 'NKR 🦁',
+    "created_at": "2025-12-31T23:59:59Z",
+  },
+  "error": null
+  });
+  $response.body = newBody;
+} else if($request.url.includes("v2/license/deactivate")){
+  $response.status = 200;
+  const newBody = JSON.stringify({
+  "isDeactivated": true
+  });
+  $response.body = newBody;
+} else if($request.url.includes("v2/license/validate")){
+  $response.status = 200;
+  const newBody = JSON.stringify({
+    "licenseKey": "NKR 🦁",  // Replace with the actual email address
+    "updatesExpireAt": "9999-12-31T23:59:59Z",
+    "lifetime": true,
+    "instanceId": {
+      "id": "47596ad9-a811-4ebf-ac8a-03fc7b6d2a17",
+      "name": 'NKR 🦁',
+      "created_at": "2025-12-31T23:59:59Z",
+    },
+    "error": null
+  });
+  $response.body = newBody;
+}
+$done($response);
