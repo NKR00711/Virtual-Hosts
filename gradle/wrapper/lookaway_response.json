@@ -1,4 +1,4 @@
-if($request.url.includes("v2/license/activate")){
+if($request.url.includes("v3/license/activate")){
   $response.status = 200;
   const newBody = JSON.stringify({
   "licenseKey": "NKR 🦁",  // Replace with the actual email address
@@ -6,13 +6,13 @@ if($request.url.includes("v2/license/activate")){
   "lifetime": true
   });
   $response.body = newBody;
-} else if($request.url.includes("v2/license/deactivate")){
+} else if($request.url.includes("v3/license/deactivate")){
   $response.status = 200;
   const newBody = JSON.stringify({
   "isDeactivated": true
   });
   $response.body = newBody;
-} else if($request.url.includes("v2/license/validate")){
+} else if($request.url.includes("v3/license/validate")){
   $response.status = 200;
   const newBody = JSON.stringify({
     "licenseKey": "NKR 🦁",  // Replace with the actual email address
