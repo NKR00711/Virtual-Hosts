@@ -17,13 +17,14 @@ if($request.url.includes("v1/user")){
     body.data.user.updated_at = '2099-01-11T11:36:16.000000Z'
   }
   $response.body = body;
-} else if($request.url.includes("v1/apps/osx/tableplus")){
+} else if($request.url.includes("v1/license/activate")){
   $response.status = 200;
-  var body = $response.body;
-  var obj = JSON.parse(body);
-  obj["Data"]["DayBeforeExpiration"] = 9999;
-  obj["Data"]["LicenseKey"] = "";
-  $response.body = JSON.stringify(obj);
+  const body = destr($response.body) as any
+  const newBody = JSON.stringify({
+    "nonce": body.nonce,
+    "valid": true
+  });
+  $response.body = newBody;
 } else if($request.url.includes("v1/licenses/devices")){
   $response.status = 200;
   const newBody = JSON.stringify({
