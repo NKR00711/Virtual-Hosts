@@ -6,7 +6,7 @@ name: Duolingo
 desc: Unlock Duo
 http:
   mitm:
-    - "api.trakt.tv"
+    - "*duolingo.com"
   script:
     - match: ^https:\/\/(ios-api-2|goals-api|ios-api-cf)\.duolingo\.com\/.*users.*
       name: DuoUnlocker
