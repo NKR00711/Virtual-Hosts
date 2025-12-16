@@ -17,4 +17,4 @@ obj["credits"] = 27163887;
 obj["can_use_referral_codes"] = true;
 obj["has_running_subscription"] = true;
 $response.body = JSON.stringify(obj);
-$done({ body: body });
+$done($response);
