@@ -150,6 +150,7 @@ if (enable_beta) {
 
 console.log('set subscribe level');
 userdata.subscriberLevel = 'GOLD';
+userdata.hasPlus = true;
 userdata.trackingProperties.has_item_live_subscription = true;
 userdata.trackingProperties.has_item_gold_subscription = true;
 
