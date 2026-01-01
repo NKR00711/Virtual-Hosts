@@ -36,10 +36,10 @@ obj["limits"]["collection"]["item_count"] = 9999999;
 obj["limits"]["notes"]["item_count"] = 9999999;
 obj["limits"]["recommendations"]["item_count"] = 9999999;
 
-obj["data"] = obj["data"] || {};
-obj["data"]["isPro"] = true;
-obj["data"]["plan"] = "Lifetime";
-obj["data"]["expireTime"] = "0";
+// obj["data"] = obj["data"] || {};
+// obj["data"]["isPro"] = true;
+// obj["data"]["plan"] = "Lifetime";
+// obj["data"]["expireTime"] = "0";
 
 body = JSON.stringify(obj);
 $done({ body: body });
