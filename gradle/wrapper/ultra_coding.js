@@ -17,7 +17,7 @@ hostname = api.ultra-coding.com
 
 *************************************/
 var body = $response.body;
-// var obj = JSON.parse(body);
+var obj = JSON.parse(body);
 
 // obj["vip"] = true;
 
@@ -39,9 +39,9 @@ var body = $response.body;
 // obj["data"] = obj["data"] || {};
 obj["data"]["isPro"] = true;
 obj["data"]["plan"] = "Lifetime";
-obj["data"]["expireTime"] = "0";
+obj["data"]["expireTime"] = "9761609599999";
 
-// body = JSON.stringify(obj);
+body = JSON.stringify(obj);
 $done({ body: body });
 
 // var ddm = JSON.parse($response.body);
