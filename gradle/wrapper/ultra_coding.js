@@ -41,8 +41,8 @@ obj["data"]["isPro"] = true;
 obj["data"]["plan"] = "Lifetime";
 obj["data"]["expireTime"] = "9761609599999";
 
-body = JSON.stringify(obj);
-$done({ body: body });
+$response.body = JSON.stringify(obj);
+$done($response);
 
 // var ddm = JSON.parse($response.body);
 
